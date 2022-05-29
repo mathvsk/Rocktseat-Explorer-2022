@@ -7,11 +7,17 @@
   ul {
     list-style: none;
   }
+
+  /* Definir o tamanho padrão para 10px. (Depois fica melhor para definir tamanhos relativos. */
+  :root {
+    font-size: 62.5%; /* 10px */
+  }
   
   body {
     background: #ECE9FD;
   
-    padding: 60px 23px 66px;
+    padding: 6.0rem 2.3rem 6.6rem;
+    font-size: 1.6rem;
   }
   
   h1 {
