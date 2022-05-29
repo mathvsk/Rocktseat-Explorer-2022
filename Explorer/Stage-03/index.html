@@ -26,7 +26,7 @@
             </p>
         </header>
 
-        <form action="">
+        <form id="my-form">
             <fieldset>
                 <!-- No chrome tem que criar uma DIV para adicionar algum estilo nesse LEGEND, pq ele não considera ele como um propriedade no css sem esssa DIV  -->
                 <div class="fieldset-wrapper">
@@ -37,32 +37,90 @@
                         <label for="event-title">
                             Título do evento <span>(mínimo 8 caracteres)</span>
                         </label>
-                        <input type="text" id="event-title">
+                        <input type="text" id="event-title" required minlength="8" >
+
+                        <div class="input-wrapper">
+                            <label for="event-link">
+                                Link do evento <span>(mínimo 8 caracteres)</span>
+                            </label>
+                            <input type="url" id="event-link">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="event-whatsapp">
+                                Whatsapp para contato <span>(mínimo 8 caracteres)</span>
+                            </label>
+                            <input type="number" id="event-whatsapp">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="event-info">
+                                Informações extras <span>(mínimo 8 caracteres)</span>
+                            </label>
+                            <textarea id="event-info"></textarea>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="event-category">Categoria</label>
+                            <select id="event-category">
+                                <option value="live">Ao vivo</option>
+                                <option value="podcast">Podcast</option>
+                                <option value="mentorship">Mentoria</option>
+                            </select>
+                        </div>
+                    </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="fieldset-wrapper">
+                    <legend>Privacidade</legend>
+
+                    <div class="input-wrapper">
+                        <label for="event-email">E-mail do administrador <span>(digite um email válido)</span></label>
+                        <input type="email" id="event-email" />
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="event-link">
-                            Link do evento <span>(mínimo 8 caracteres)</span>
-                        </label>
-                        <input type="url" id="event-link">
+                        <label for="event-password">Senha de acesso para os participantes <span>(mínimo 8
+                                caracteres)</span></label>
+                        <input type="password" id="event-password" minlength="8" />
                     </div>
 
-                    <div class="input-wrapper">
-                        <label for="event-whatsapp">
-                            Whatsapp para contato <span>(mínimo 8 caracteres)</span>
-                        </label>
-                        <input type="number" id="event-whatsapp">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-private" />
+                        <label for="event-private">Evento privado</label>
                     </div>
 
-                    <div class="input-wrapper">
-                        <label for="event-info">
-                            Informações extras <span>(mínimo 8 caracteres)</span>
-                        </label>
-                        <textarea id="event-info"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="fieldset-wrapper">
+                    <legend>Dia e hora</legend>
+
+                    <div class="col-3">
+                        <div class="input-wrapper">
+                            <label for="event-date">Data</label>
+                            <input type="date" id="event-date" />
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="event-begin">Das</label>
+                            <input type="time" id="event-begin" />
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="event-end">Até</label>
+                            <input type="time" id="event-end" />
+                        </div>
                     </div>
                 </div>
             </fieldset>
         </form>
+        <footer>
+            <button class="button" form="my-form">
+                Salvar evento
+            </button>
+        </footer>
     </div>
 
 
