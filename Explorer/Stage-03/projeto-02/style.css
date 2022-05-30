@@ -79,6 +79,10 @@ ul li {
     display: flex;
     gap: 3.8rem;
   }
+
+  ul li + li {
+    margin-top: 3.2rem;
+  }
   
   ul li span {
     font-weight: 800;
@@ -89,3 +93,28 @@ ul li {
     color: #090039;
   }
   
+  /* media queries */
+@media (min-width: 700px) {
+
+    body {
+      padding: 8rem;
+    }
+  
+    main {
+      max-width: 1020px;
+      display: flex;
+      gap: 10rem;
+    }
+  
+    main > div {
+      max-width: 484px;
+    }
+  
+    ul li {
+      gap: 5.3rem;
+      max-width: 450px;
+      align-items: center;
+    }
+  
+    
+  }
