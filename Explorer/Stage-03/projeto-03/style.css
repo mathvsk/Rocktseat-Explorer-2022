@@ -84,6 +84,7 @@ main {
 .card img {
     height: 41.6rem;
     object-fit: cover;
+    filter: brightness(0.7);
 
     border-radius: 6px;
 
