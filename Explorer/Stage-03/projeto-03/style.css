@@ -82,6 +82,13 @@ main {
     object-fit: cover;
 
     border-radius: 6px;
+
+    transition: all 200ms;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    opacity: 0.3;
 }
 
 .card h2 {
