@@ -1,25 +1,47 @@
-:root {
-  --ff-heading: 'Epilogue', sans-serif;
-  --ff-texting: 'Open sans', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  --hue: 250;
-  --bg-primary: hsl(var(--hue), 22%, 20%);
-  --fc-primary: hsl(var(--hue), 0%, 100%);
-  --fc-secondary: hsl(var(--hue), 50%, 80%);
+:root {
+    --ff-heading: 'Epilogue', sans-serif;
+    --ff-texting: 'Open sans', sans-serif;
+
+    --hue: 250;
+    --bg-primary: hsl(var(--hue), 22%, 20%);
+    --fc-primary: hsl(var(--hue), 0%, 100%);
+    --fc-secondary: hsl(var(--hue), 50%, 80%);
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+    --fs-heading: 4rem;
 }
 
 body {
-  font-family: var(--ff-texting);
+    font-family: var(--ff-texting);
 
-  background-color: var(--bg-primary);
-  color: var(--fc-primary);
+    background-color: var(--bg-primary);
+    color: var(--fc-primary);
+
+    font-size: var(--fs-body);
 }
 
 header {
-  font-family: var(--ff-heading);
+    margin: 10rem 0 8rem;
+    font-family: var(--ff-heading);
+
+    text-align: center;
 }
 
 header p {
-  color: var(--fc-secondary);
-  text-transform: uppercase;
+    color: var(--fc-secondary);
+    text-transform: uppercase;
+
+    line-height: 3.2rem;
+    letter-spacing: 3px;
+
+    font-weight: 400;
+
+    margin-bottom: 1.7rem;
 }
