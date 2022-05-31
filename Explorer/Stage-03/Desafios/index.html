@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Explorer Stage 03 - Desafio 01 (Formulário intermediário)</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>Mentoria</h1>
+            <p>Preencha o formulário abaixo para agendar a sua mentoria</p>
+        </header>
+
+        <form>
+            <!-- utilizar fieldset como se fosse uma (div) no form -->
+            <fieldset>
+                <legend id="titulo-form">Informações pessoais</legend>
+                <div class="input-nome-sobrenome">
+                    <div>
+                        <!-- Usar o label para usabilidade, e tambem para referenciar o input -->
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome">
+                    </div>
+                    <div>
+                        <!-- Usar o label para usabilidade, e tambem para referenciar o input -->
+                        <label for="nome">Sobrenome</label>
+                        <input type="text" id="nome">
+                    </div>
+                </div>
+                <div class="campo-input">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+
+                <div class="campo-input">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha">
+                </div>
+
+        </form>
+</body>
+
+</html>
