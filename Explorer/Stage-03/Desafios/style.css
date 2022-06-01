@@ -61,6 +61,14 @@ form {
     border-radius: 20px 20px 0 0;
 }
 
+span {
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+
+    margin-left: 6px;
+}
+
 fieldset {
     border: none;
 }
@@ -161,4 +169,9 @@ button {
 
     background: #FF5374;
     border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #ff345d;
 }
