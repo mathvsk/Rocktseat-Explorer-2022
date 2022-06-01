@@ -21,15 +21,15 @@
             <p>Preencha o formulário abaixo para agendar a sua mentoria</p>
         </header>
 
-        <form>
+        <form id="my-form">
             <!-- utilizar fieldset como se fosse uma (div) no form -->
-            <fieldset>
+            <fieldset class="campo">
                 <legend id="titulo-form">Informações pessoais</legend>
                 <div class="input-nome-sobrenome">
                     <div>
                         <!-- Usar o label para usabilidade, e tambem para referenciar o input -->
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome">
+                        <input type="text" id="nome" required>
                     </div>
                     <div>
                         <!-- Usar o label para usabilidade, e tambem para referenciar o input -->
@@ -46,8 +46,52 @@
                     <label for="senha">Senha</label>
                     <input type="password" id="senha">
                 </div>
+            </fieldset>
 
+            <fieldset class="campo">
+                <legend id="titulo-form">Informações pessoais</legend>
+                <div class="campo-input">
+                    <label for="senha">Nome do seu mentor</label>
+                    <input type="text" id="senha">
+                </div>
+            </fieldset>
+
+            <fieldset >
+                <legend id="titulo-form">Seus horários disponíveis</legend>
+                <div class="campo-input marcar-horario">
+                    <div>
+                        <h2>Primeira Mentoria</h2>
+                        <label for="data">Data</label>
+                        <input type="date" id="data">
+                    </div>
+                    <div>
+                        <label for="das">Das</label>
+                        <input type="time" id="das">
+                    </div>
+                    <div>
+                        <label for="ate">Até</label>
+                        <input type="time" id="ate">
+                    </div>
+                </div>
+                <div class="campo-input marcar-horario">
+                    <div>
+                        <h2>Segunda Mentoria</h2>
+                        <label for="data2">Data</label>
+                        <input type="date" id="data2">
+                    </div>
+                    <div>
+                        <label for="das2">Das</label>
+                        <input type="time" id="das2">
+                    </div>
+                    <div>
+                        <label for="ate2">Até</label>
+                        <input type="time" id="ate2">
+                    </div>
+                </div>
+            </fieldset>
         </form>
+        <footer>
+            <button type="submit" form="my-form">Salvar</button>
+        </footer>
 </body>
-
 </html>
