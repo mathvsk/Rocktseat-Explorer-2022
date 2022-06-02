@@ -1,0 +1,5 @@
+alert("Soma")
+let numberOne = prompt("Digite o primeiro valor:")
+let numberTwo = prompt("Digite o segundo valor:")
+let sum = Number(numberOne) + Number(numberTwo)
+alert (`${numberOne} + ${numberTwo} é = ${sum }`)
