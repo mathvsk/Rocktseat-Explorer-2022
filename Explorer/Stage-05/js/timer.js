@@ -1,4 +1,5 @@
-
+import Sounds from "./sounds.js"
+const sound = Sounds()
 /// factory: uma função que vai retornar um obj
 // Destructing 
 export default function Timer({
@@ -33,6 +34,7 @@ export default function Timer({
             if (minutes <= 0 && seconds <= 0) {
                 resetControls()
                 updateDisplay()
+                Sounds().timeEnd()
                 return
             }
 
