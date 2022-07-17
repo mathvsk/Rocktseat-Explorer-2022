@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-primary: 'Poppins', sans-serif;
+    --text-color: #303030;
+
+    --hue: 194;
+    --primary-color: hsl(var(--hue), 100%, 63%)
+}
+
+/* Uma classe que esconde os elementos na tela. Essa classe substitui o display none, usar ela é  MELHOR para sites com acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body * {
+    font-family: var(--ff-primary);
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--primary-color);
+}
+
+#app {
+    max-width: 500px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    display: none;
+}
