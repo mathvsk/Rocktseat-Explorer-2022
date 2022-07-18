@@ -6,20 +6,17 @@ export class Favorites {
     }
 
     load() {        
-        this.entries = [
-            {
-                login: "mathvsk",
-                name: "Matheus Viscki",
-                public_repos: "50",
-                followers: "200"
-            }
-        ]
+        this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
     }
 
     delete(user) {
         const filteredEntries = this.entries
             .filter(entry => entry.login !== user.login)
+
+        this.entries = filteredEntries
+        this.update()
     }
+    
 }
 
 // classe que vai criar a view e events do html
@@ -50,7 +47,7 @@ export class FavoritesView extends Favorites {
                 const isOk = confirm('Tem certeza que deseja deletar essa linha?')
 
                 if (isOk) {
-                    user.delete(user)
+                    this.delete(user)
                 }
             }
 
