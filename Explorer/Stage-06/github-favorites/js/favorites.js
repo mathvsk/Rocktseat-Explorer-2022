@@ -1,24 +1,10 @@
-export class GithubUser{
-    static search(username) {
-        const endpoint = `https://api.github.com/users/${username}`
-
-        return fetch(endpoint)
-        .then(data => data.json())
-        .then(({login, name, public_repos, followers}) => ({
-            login,
-            name,
-            public_repos,
-            followers
-        }))
-    }
-}
+import { GithubUser } from "./gitHubUser.js"
 
 // classe que vai conter a lógica dos dados
 export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root)
         this.load()
-
     }
 
     load() {        
@@ -31,6 +17,12 @@ export class Favorites {
 
     async add(username) {
         try {
+            const userExist = this.entries.find(entry => entry.login === username)
+
+            if(userExist) {
+                throw new Error('User already exists!')
+            }
+
             const user = await GithubUser.search(username)
 
             if(user.login === undefined) {
@@ -53,28 +45,6 @@ export class Favorites {
         this.entries = filteredEntries
         this.update()
         this.save()
-    }
-    
-}
-
-// classe que vai criar a view e events do html
-export class FavoritesView extends Favorites {
-    constructor(root) {
-        super(root)
-
-        this.tbody = this.root.querySelector('table tbody')
-
-        this.update()
-        this.onadd()
-    }
-
-    onadd() {
-        const addButton = this.root.querySelector('.search button')
-        addButton.onclick = () => {
-            const { value } = this.root.querySelector('.search input')
-
-            this.add(value)
-        }
     }
 
     update() {
@@ -123,11 +93,5 @@ export class FavoritesView extends Favorites {
 
         return tr 
     }
-
-    removeAllTr() {
-        this.tbody.querySelectorAll('tr')
-            .forEach((tr) => {
-                tr.remove()
-            })
-    }
+    
 }
