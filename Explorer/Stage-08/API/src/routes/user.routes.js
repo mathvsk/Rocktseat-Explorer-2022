@@ -1,12 +1,10 @@
 const { Router } = require('express');
 
+const UsersController = require('../controllers/UsersController');
+
 const usersRoutes = Router();
+const usersController = new UsersController();
 
-usersRoutes.post('/', (request, response) => { // não é obrigatório o uso de parametro na url
-    const { name, year, sex } = request.body
-
-    response.json({name, year, sex}) // recebendo a requisição no tipo JSON
-});
-
+usersRoutes.post('/', usersController.create);
 
 module.exports = usersRoutes;
