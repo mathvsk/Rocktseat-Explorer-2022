@@ -2,8 +2,10 @@ const express = require('express'); // importando o express
 
 const app = express(); // inicializando o express
 
-app.get('/', (request, response) => { // método GET
-    response.send("Hello World");
+app.get('/:id/:user', (request, response) => { // método GET
+    const { id, user } = request.params // desestruturando o ID e USER do request
+
+    response.send(`ID = ${id}. USER = ${user}`)
 });
 
 const PORT = 3333;
