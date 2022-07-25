@@ -1,14 +1,12 @@
 const express = require('express'); // importando o express
 
+const routes = require('./routes');
+
 const app = express(); // inicializando o express
 app.use(express.json()); // definindo qual o padrão sera utilizado para o envio de requisições
 
-app.post('/post', (request, response) => { // não é obrigatório o uso de parametro na url
-    const { name, year, sex } = request.body
-
-    response.json({name, year, sex}) // recebendo a requisição no tipo JSON
-});
+app.use(routes);
 
 const PORT = 3333;
-app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`))
+app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
 
