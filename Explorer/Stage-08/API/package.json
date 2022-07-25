@@ -4,7 +4,7 @@
   "description": "Api desenvolvida no módulo 8 do explorer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/server.js"
   },
   "author": "Matheus",
   "license": "ISC",
