@@ -1,17 +1,12 @@
 const express = require('express'); // importando o express
 
 const app = express(); // inicializando o express
+app.use(express.json()); // definindo qual o padrão sera utilizado para o envio de requisições
 
-app.get('/route/:id/:user', (request, response) => { // método GET
-    const { id, user } = request.params // desestruturando o ID e USER do request
+app.post('/post', (request, response) => { // não é obrigatório o uso de parametro na url
+    const { name, year, sex } = request.body
 
-    response.send(`ID = ${id}. USER = ${user}`)
-});
-
-app.get('/query', (request, response) => { // não é obrigatório o uso de parametro na url
-    const {idade, user } = request.query // desestruturando o IDADE e USER do query params
-
-    response.send(`ID = ${idade}. USER = ${user}`)
+    response.json({name, year, sex}) // recebendo a requisição no tipo JSON
 });
 
 const PORT = 3333;
