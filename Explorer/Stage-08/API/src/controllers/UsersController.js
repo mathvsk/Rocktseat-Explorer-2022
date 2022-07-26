@@ -9,7 +9,7 @@ class UsersController {
             - delete - DELETE para remover um registro.
     */
 
-    create (request, responde) {
+    create (request, response) {
         const { name, year, sex } = request.body
 
         response.json({name, year, sex}) // recebendo a requisição no tipo JSON
