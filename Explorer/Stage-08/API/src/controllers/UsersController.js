@@ -1,3 +1,5 @@
+const AppError = require("../utils/AppError");
+
 class UsersController {
     /* 
         BOAS PRÁTICAS
@@ -11,6 +13,10 @@ class UsersController {
 
     create (request, response) {
         const { name, year, sex } = request.body
+
+        if (!name) {
+            throw new AppError("Nome é obrigatório!")
+        }
 
         response.json({name, year, sex}) // recebendo a requisição no tipo JSON
     }
