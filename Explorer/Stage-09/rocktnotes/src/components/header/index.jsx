@@ -3,7 +3,6 @@ import { Container, Profile, Logout } from "./style"
 
 export function Header () {
     return (
-    <>
       <Container>
         <Profile>
           <img src="https://github.com/mathvsk.png" alt="Foto de usuário" />
@@ -18,6 +17,5 @@ export function Header () {
           <RiShutDownLine />
         </Logout>
       </Container>
-    </>
     )
 }
