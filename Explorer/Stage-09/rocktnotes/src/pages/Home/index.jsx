@@ -5,7 +5,7 @@ export function Home() {
     return (
         <Container>
             <Brand>
-                <h1>Rocktnotes</h1>
+                <h1>Rocketnotes</h1>
             </Brand>
 
             <Header />
