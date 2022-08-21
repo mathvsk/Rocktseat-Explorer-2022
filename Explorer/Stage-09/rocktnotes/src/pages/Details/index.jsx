@@ -3,12 +3,15 @@ import { Button } from "../../components/button"
 import { Header } from "../../components/header"
 import { Section } from "../../components/section"
 import { Tag } from "../../components/tag"
+import { ButtonText } from "../../components/buttonText"
 
 export function Details () {
   return (
     <Container>
       <Header />
 
+      <ButtonText title="Excluir Nota"/>
+    
       <Section title="Links úteis">
         <Links>
           <li><a href="#">Link 1</a></li>
