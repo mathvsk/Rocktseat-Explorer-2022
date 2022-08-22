@@ -2,6 +2,8 @@ import { Container, Brand, Menu, Search, Content, NewNote } from './style';
 import { Header } from '../../components/header';
 import { ButtonText } from '../../components/buttonText';
 import { Input } from '../../components/input';
+import { Section } from '../../components/section';
+import { Note } from '../../components/note';
 
 import { FiPlus, FiSearch } from 'react-icons/fi';
 
@@ -25,7 +27,16 @@ export function Home() {
             </Search>
 
             <Content>
-
+                <Section title="Minhas notas">
+                    <Note data={{ 
+                        title: 'React', 
+                        tags: [
+                            {id: '1', name:'react'},
+                            {id: '2', name:'reactJS'},
+                        ]
+                        }}
+                    />
+                </Section>
             </Content>
 
             <NewNote>
