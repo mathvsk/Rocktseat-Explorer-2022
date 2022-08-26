@@ -25,8 +25,7 @@ export const Form = styled.form`
 
     > h2 {
         font-size: 24px;
-        margin-top: 84px;
-        margin-bottom: 24px;
+        margin: 48px 0 ;
     }
 
     > p {
@@ -44,4 +43,6 @@ export const Background = styled.div`
     flex: 1;
     background: url(${backgroundIMG}) no-repeat center center;
     background-size: cover;
+
+    opacity: 0.3;
 `;
