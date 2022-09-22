@@ -28,6 +28,14 @@ function AuthProvider({ children }) {
         }
     }
 
+    function signOut() {
+        localStorage.removeItem('@rocketnotes:token');
+        localStorage.removeItem('@rocketnotes:user');
+
+        setData({});
+    }
+
+    // UseEffect diz ao REACT oq precisa fazer apos uma renderização
     useEffect(() => {
         const token = localStorage.getItem('@rocketnotes:token');
         const user = localStorage.getItem('@rocketnotes:user');
@@ -43,8 +51,13 @@ function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }} >
-            {children}
+        <AuthContext.Provider value={{ 
+                signIn,
+                signOut,                
+                user: data.user 
+                }} 
+            >
+                {children}
         </AuthContext.Provider>
     )
 }
