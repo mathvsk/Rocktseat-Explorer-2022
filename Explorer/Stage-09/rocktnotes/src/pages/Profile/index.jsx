@@ -10,12 +10,23 @@ import { Link } from 'react-router-dom';
 
 export function Profile() {
     // Pegando as informaçoes do user referente ao contexto
-    const { user } = useAuth();
+    const { user, updateProfile } = useAuth();
 
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
     const [passwordOld, setpasswordOld] = useState();
     const [passwordNew, setpasswordNew] = useState();
+
+    async function handleUpdate(){
+        const user = {
+            name,
+            email,
+            passwordOld,
+            passwordNew,
+        }
+
+        await updateProfile({ user })
+    }
 
     return (
         <Container>
@@ -70,7 +81,7 @@ export function Profile() {
                     onChange={e => setpasswordNew(e.target.value)}
                 />
 
-                <Button title="Salvar" />
+                <Button title="Salvar" onClick={handleUpdate} />
             </Form>
         </Container>
     )
