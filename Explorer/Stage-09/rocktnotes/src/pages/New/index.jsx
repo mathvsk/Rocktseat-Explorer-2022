@@ -10,17 +10,29 @@ import { useState } from 'react';
 import { Container, Form } from './style';
 
 export function New() {
-    const [links, setlinks] = useState([]);
+    const [links, setLinks] = useState([]);
     const [newLink, setNewLink] = useState("");
+
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
 
     function handleAddLink() {
         // pegando o estado anterior do componente
-        setlinks(prevState => [...prevState, newLink]),
+        setLinks(prevState => [...prevState, newLink]),
         setNewLink("");
     }
 
     function handleRemoveLink(deleted) {
-        setlinks(prevState => prevState.filter(link => link !== deleted));
+        setLinks(prevState => prevState.filter(link => link !== deleted));
+    }
+
+    function handleAddTag() {
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
+    }
+
+    function handleRemoveTag(deleted) {
+        setTags(prevState => prevState.filter(tags => tags !== deleted));
     }
 
     return (
@@ -60,8 +72,25 @@ export function New() {
 
                     <Section title="Marcadores">
                         <div className='tags'>
-                            <NoteItem value="react" />
-                            <NoteItem placeholder="Nova tag" isNew />
+                            {
+                                tags.map((tag, index) => (
+                                    <NoteItem 
+                                        key={index}
+                                        value={tag}
+                                        onClick={() => handleRemoveTag(tag)} 
+                                    />
+
+                                ))
+
+                            }
+
+                            <NoteItem 
+                                isNew 
+                                placeholder="Nova tag" 
+                                onChange={e => setNewTag(e.target.value)}
+                                value={newTag}
+                                onClick={handleAddTag}
+                            />
                         </div>
                     </Section>
 

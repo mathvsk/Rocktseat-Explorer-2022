@@ -17,7 +17,7 @@ export const Container = styled.div`
     .tags {
         display: flex;
         justify-content: space-between;
-        flex-wrap: flex-wrap;
+        flex-wrap: wrap;
     }
 `
 
