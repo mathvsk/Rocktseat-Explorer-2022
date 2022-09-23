@@ -44,6 +44,18 @@ export function New() {
     }
 
     async function handleNewNote() { 
+        if(!title) {
+            return alert("Adicione um titulo")
+        }
+
+        if(newLink) {
+            return alert("Adicione o link no campo para continuar")
+        }
+
+        if(newTag) {
+            return alert("Adicione a tag no campo para continuar")
+        }
+
         await api.post('/notes', {
             title,
             description,
@@ -107,7 +119,6 @@ export function New() {
                                     />
 
                                 ))
-
                             }
 
                             <NoteItem 
