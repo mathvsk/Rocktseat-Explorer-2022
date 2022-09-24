@@ -5,10 +5,12 @@ import { Container, Form, Avatar } from "./style";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { useAuth } from "../../hooks/auth";
-import { Link } from 'react-router-dom';
 
 import { api } from "../../services/api";
 import avatarPlaceHolder from "../../assets/avatar_placeholder.svg"
+
+import { useNavigate } from 'react-router-dom';
+
 
 export function Profile() {
     // Pegando as informaçoes do user referente ao contexto
@@ -23,6 +25,12 @@ export function Profile() {
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder
     const [avatar, setAvatar] = useState(avatarUrl);
     const [avatarFile, setAvatarFile] = useState(null);
+
+    const navigate = useNavigate();
+
+    function handleBack() {
+        navigate(-1)
+      }
 
     async function handleUpdate() {
         const user = {
@@ -46,9 +54,9 @@ export function Profile() {
     return (
         <Container>
             <header>
-                <Link to="/">
+                <button type='button' onClick={handleBack}>
                     <FiArrowLeft />
-                </Link>
+                </button>
             </header>
 
             <Form>

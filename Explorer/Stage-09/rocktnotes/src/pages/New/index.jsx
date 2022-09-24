@@ -4,7 +4,7 @@ import { TextArea } from '../../components/textarea';
 import { NoteItem } from '../../components/noteitem';
 import { Section } from '../../components/section';
 import { Button } from '../../components/button';
-import { Link } from 'react-router-dom';
+import { ButtonText } from "../../components/buttonText"
 import { useState } from 'react';
 
 import { Container, Form } from './style';
@@ -23,6 +23,10 @@ export function New() {
     const [newTag, setNewTag] = useState("");
 
     const navigate = useNavigate();
+
+    function handleBack() {
+        navigate(-1)
+      }
 
     function handleAddLink() {
         // pegando o estado anterior do componente
@@ -64,7 +68,7 @@ export function New() {
         });
 
         alert('Nota criada com sucesso!!')
-        navigate('/')
+        navigate(-1)
     }
 
     return (
@@ -75,7 +79,10 @@ export function New() {
                 <Form>
                     <header>
                         <h1>Criar nota</h1>
-                        <Link to="/">voltar</Link>
+                        <ButtonText 
+                            title='Voltar'
+                            onClick={handleBack}
+                        />
                     </header>
 
                     <Input 

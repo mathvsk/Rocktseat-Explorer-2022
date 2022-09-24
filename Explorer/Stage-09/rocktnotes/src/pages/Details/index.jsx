@@ -16,7 +16,8 @@ export function Details () {
   const navigate = useNavigate();
 
   function handleBack() {
-    navigate('/')
+    // usado -1 para voltar pra rota anterior (dessa maneira, não empilha req no histórico)
+    navigate(-1)
   }
 
   async function handleRemove() {
@@ -24,7 +25,7 @@ export function Details () {
 
     if (confirm) {
       await api.delete(`/notes/${params.id}`);
-      navigate('/');
+      navigate(-1);
     }
   }
 
