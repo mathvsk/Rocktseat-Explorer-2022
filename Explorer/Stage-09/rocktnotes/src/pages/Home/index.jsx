@@ -20,7 +20,7 @@ export function Home() {
         if (tagName === 'all') {
             return setTagsSelected([]);
         }
-        
+
         const alreadySelected = tagsSelected.includes(tagName)
         
         if (alreadySelected) {
@@ -87,7 +87,7 @@ export function Home() {
                 <Input 
                     placeholder="Pesquisar pelo título" 
                     icon={FiSearch}
-                    onChange={() => setSearch(e.target.value)}
+                    onChange={(e) => setSearch(e.target.value)}
                 />
             </Search>
 
